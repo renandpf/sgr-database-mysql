@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: sgr-database-clusterip
+spec:
+  #ClusterIP somente é acessado de dentro do cluster
+  #NodePort é acessado de fora
+  #LoadBalancer é trabalha com balanceameto
+  type: ClusterIP
+  
+  #Referencia o pod pelo label (não pelo name)
+  selector:
+    app: "sgr-database"
+  ports: 
+    - port: 80
+      targetPort: 3306

@@ -5,3 +5,6 @@ docker push renandpf/sgr-database:1.0.0
 
 Para criar pod a partir do arquivo yaml
 kubectl apply -f sgr-database-mysql-pod.yaml
+
+Para acessar o pod (teminal), devemos usar:
+kubectl exec -it sgr-database
