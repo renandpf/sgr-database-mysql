@@ -1,16 +1,15 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: sgr-database
-  #O label é usado para poder ser acessado por outros pods, services, etc (tipo DNS). Não da pra usar o "metadata.name". É recomendado sempre colocar
   labels:
     app: sgr-database
+  name: sgr-database
 spec:
   containers:
-  - name: sgr-database
+  - env:
+    - name: MYSQL_ROOT_PASSWORD
+      value: senha
     image: renandpf/sgr-database:1.0.0
+    name: sgr-database
     ports:
     - containerPort: 3306
-    env:
-    - name: MYSQL_ROOT_PASSWORD
-      value: "senha"
