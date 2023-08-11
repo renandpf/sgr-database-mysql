@@ -6,10 +6,10 @@ metadata:
   name: sgr-database
 spec:
   containers:
-  - env:
-    - name: MYSQL_ROOT_PASSWORD
-      value: senha
+  - name: sgr-database
     image: renandpf/sgr-database:1.0.0
-    name: sgr-database
     ports:
-    - containerPort: 3306
+      - containerPort: 3306
+    envFrom:
+      - configMapRef:
+          name: sgr-database-mysql-cm
