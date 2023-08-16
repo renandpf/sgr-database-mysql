@@ -1,10 +1,12 @@
-Para criar a imagem
+GERAR IMAGEM
 sudo docker build -t renandpf/sgr-database:1.0.0 .
 docker tag renandpf/sgr-database:1.0.0 renandpf/sgr-database:1.0.0
 docker push renandpf/sgr-database:1.0.0
 
-Para criar pod a partir do arquivo yaml
-kubectl apply -f sgr-database-mysql-pod.yaml
+SUBIR MINIKUBE
+minikube start
 
-Para acessar o pod (teminal), devemos usar:
-kubectl exec -it sgr-database
+SUBIR DATABASE
+kubectl apply -f sgr-database-mysql-secrets.yaml
+kubectl apply -f sgr-database-mysql-service.yaml
+kubectl apply -f sgr-database-mysql-pod.yaml
