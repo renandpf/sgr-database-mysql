@@ -10,6 +10,9 @@ spec:
     image: renandpf/sgr-database:1.0.0
     ports:
       - containerPort: 3306
-    envFrom:
-      - configMapRef:
-          name: sgr-database-mysql-cm
+    env:
+      - name: MYSQL_ROOT_PASSWORD
+        valueFrom:
+          secretKeyRef:
+            name: sgr-database-mysql-secrets
+            key: password
