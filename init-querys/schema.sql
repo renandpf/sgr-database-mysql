@@ -1,9 +1,11 @@
 -- MySQL Workbench Synchronization
--- Generated: 2023-08-29 20:15
+-- Generated: 2023-09-02 20:58
 -- Model: New Model
 -- Version: 1.0
 -- Project: Name of the project
 -- Author: Renan
+
+CREATE SCHEMA `sgr_database` ;
 
 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
@@ -25,7 +27,7 @@ COLLATE = utf8mb4_0900_ai_ci;
 CREATE TABLE IF NOT EXISTS `sgr_database`.`Item` (
   `id` INT(11) NOT NULL AUTO_INCREMENT,
   `quantidade` INT(11) NOT NULL,
-  `valor` FLOAT(11) NOT NULL,
+  `valorUnitario` FLOAT(11) NOT NULL,
   `pedidoId` INT(11) NOT NULL,
   `produtoId` INT(11) NOT NULL,
   PRIMARY KEY (`id`),
@@ -97,3 +99,13 @@ SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 
+INSERT INTO `sgr_database`.`PlataformaPagamento` (`nome`, `status`) VALUES ('mercado-pago', '0');
+INSERT INTO `sgr_database`.`PlataformaPagamento` (`nome`, `status`) VALUES ('pag-seguro', '1');
+
+INSERT INTO `sgr_database`.`Cliente` (`nome`, `cpf`, `email`) VALUES ('Cliente Teste A', '11111111111', 'clientea@mail.com');
+INSERT INTO `sgr_database`.`Cliente` (`nome`, `cpf`, `email`) VALUES ('Cliente Teste B', '22222222222', 'clienteb@mail.com');
+
+INSERT INTO `sgr_database`.`Produto` (`nome`, `descricao`, `valor`, `categoriaId`) VALUES ('Hamburguer Test', 'Any descrição A', '10', '0');
+INSERT INTO `sgr_database`.`Produto` (`nome`, `descricao`, `valor`, `categoriaId`) VALUES ('Maionese Teste', 'Any descrição B', '1', '1');
+INSERT INTO `sgr_database`.`Produto` (`nome`, `descricao`, `valor`, `categoriaId`) VALUES ('Refri Teste', 'Any descrição C', '5', '2');
+INSERT INTO `sgr_database`.`Produto` (`nome`, `descricao`, `valor`, `categoriaId`) VALUES ('Goiabada Teste', 'Any descrição D', '8', '3');
