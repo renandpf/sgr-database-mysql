@@ -1,11 +1,11 @@
 -- MySQL Workbench Synchronization
--- Generated: 2023-09-02 20:58
+-- Generated: 2023-09-02 21:35
 -- Model: New Model
 -- Version: 1.0
 -- Project: Name of the project
 -- Author: Renan
 
-CREATE SCHEMA `sgr_database` ;
+CREATE SCHEMA `sgr_database`;
 
 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
@@ -88,7 +88,8 @@ COLLATE = utf8mb4_0900_ai_ci;
 
 CREATE TABLE IF NOT EXISTS `sgr_database`.`PlataformaPagamento` (
   `id` INT(11) NOT NULL AUTO_INCREMENT,
-  `nome` VARCHAR(100) NOT NULL,
+  `code` VARCHAR(100) NOT NULL,
+  `nome` VARCHAR(100) NULL DEFAULT NULL,
   `status` INT(11) NOT NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB
@@ -99,8 +100,8 @@ SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 
-INSERT INTO `sgr_database`.`PlataformaPagamento` (`nome`, `status`) VALUES ('mercado-pago', '0');
-INSERT INTO `sgr_database`.`PlataformaPagamento` (`nome`, `status`) VALUES ('pag-seguro', '1');
+INSERT INTO `sgr_database`.`PlataformaPagamento` (`code`, `nome`, `status`) VALUES ('MERCADO_PAGO', 'Mercado Pago', '0');
+INSERT INTO `sgr_database`.`PlataformaPagamento` (`code`, `nome`, `status`) VALUES ('PAG_SEGURO', 'Pag Seguro', '1');
 
 INSERT INTO `sgr_database`.`Cliente` (`nome`, `cpf`, `email`) VALUES ('Cliente Teste A', '11111111111', 'clientea@mail.com');
 INSERT INTO `sgr_database`.`Cliente` (`nome`, `cpf`, `email`) VALUES ('Cliente Teste B', '22222222222', 'clienteb@mail.com');
