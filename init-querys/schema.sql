@@ -103,10 +103,10 @@ SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 INSERT INTO `sgr_database`.`PlataformaPagamento` (`code`, `nome`, `status`) VALUES ('MERCADO_PAGO', 'Mercado Pago', '0');
 INSERT INTO `sgr_database`.`PlataformaPagamento` (`code`, `nome`, `status`) VALUES ('PAG_SEGURO', 'Pag Seguro', '1');
 
-INSERT INTO `sgr_database`.`Cliente` (`nome`, `cpf`, `email`) VALUES ('Cliente Teste A', '11111111111', 'clientea@mail.com');
-INSERT INTO `sgr_database`.`Cliente` (`nome`, `cpf`, `email`) VALUES ('Cliente Teste B', '22222222222', 'clienteb@mail.com');
+INSERT INTO `sgr_database`.`Cliente` (`nome`, `cpf`, `email`) VALUES ('Cliente Teste A', '33440578046', 'clientea@mail.com');
+INSERT INTO `sgr_database`.`Cliente` (`nome`, `cpf`, `email`) VALUES ('Cliente Teste B', '64839871027', 'clienteb@mail.com');
 
-INSERT INTO `sgr_database`.`Produto` (`nome`, `descricao`, `valor`, `categoriaId`) VALUES ('Hamburguer Test', 'Any descrição A', '10', '0');
-INSERT INTO `sgr_database`.`Produto` (`nome`, `descricao`, `valor`, `categoriaId`) VALUES ('Maionese Teste', 'Any descrição B', '1', '1');
-INSERT INTO `sgr_database`.`Produto` (`nome`, `descricao`, `valor`, `categoriaId`) VALUES ('Refri Teste', 'Any descrição C', '5', '2');
-INSERT INTO `sgr_database`.`Produto` (`nome`, `descricao`, `valor`, `categoriaId`) VALUES ('Goiabada Teste', 'Any descrição D', '8', '3');
+INSERT INTO `sgr_database`.`Produto` (`nome`, `descricao`, `valor`, `categoriaId`) VALUES ('Hamburguer Test', 'Any descricao A', '10', '0');
+INSERT INTO `sgr_database`.`Produto` (`nome`, `descricao`, `valor`, `categoriaId`) VALUES ('Maionese Teste', 'Any descricao B', '1', '1');
+INSERT INTO `sgr_database`.`Produto` (`nome`, `descricao`, `valor`, `categoriaId`) VALUES ('Refri Teste', 'Any descricao C', '5', '2');
+INSERT INTO `sgr_database`.`Produto` (`nome`, `descricao`, `valor`, `categoriaId`) VALUES ('Goiabada Teste', 'Any descricao D', '8', '3');
